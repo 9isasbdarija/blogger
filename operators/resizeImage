@@ -1,2 +1,2 @@
-- <img expr:src='data:view.featuredImage resizeImage 600 resizeImage "4:3"'/>
-- <img expr:src='resizeImage(data:view.featuredImage, 600, "4:3")'/>
+<img expr:src='data:view.featuredImage resizeImage 600 resizeImage "4:3"'/>
+<img expr:src='resizeImage(data:view.featuredImage, 600, "4:3")'/>
