@@ -1,0 +1,41 @@
+<b:widget id='PopularPosts1' locked='false' title='مشاركات شائعة' type='PopularPosts' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+      <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+      <b:widget-setting name='showSnippets'>true</b:widget-setting>
+      <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <b:include name='snippetedPosts'/>
+  </div>
+</b:includable>
+
+<b:includable id='snippetedPosts'>
+  <div role='feed'>
+    <b:loop values='data:posts' var='post'>
+      <article class='post' role='article'>
+        <b:include name='post'/>
+      </article>
+    </b:loop>
+  </div>
+</b:includable>
+
+<b:includable id='post'>
+<div class='content'>
+  <div class='image'>
+<b:if cond='data:post.featuredImage'>
+<img expr:src='resizeImage(data:post.featuredImage, 290, "21:9")' expr:alt='data:post.title'/>
+<b:else/>
+<b:class name='not-avaible'/>
+<span class='no-img'/>
+</b:if>
+</div>
+<div class='title'><a expr:href='data:post.url'><data:post.title/></a></div>
+</div>
+</b:includable>
+
+
+
+  </b:widget>
